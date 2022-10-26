@@ -11,7 +11,8 @@ resource "aws_cloudwatch_metric_alarm" "test" {
  alarm_actions        = [var.sns_topic_name]
 
   dimensions = {
-    InstanceId = "${var.instance}"
+    #InstanceId = "${var.instance}"
+    tags = "${var.tags}"
     TopicName = "${var.sns_topic_name}"
   }
  }
